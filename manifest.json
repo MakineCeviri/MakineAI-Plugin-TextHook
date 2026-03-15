@@ -1,0 +1,22 @@
+{
+    "id": "com.makineceviri.texthook",
+    "name": "MakineAI TextHook",
+    "version": "0.1.0",
+    "apiVersion": 1,
+    "category": "hook",
+    "description": "Oyun belleğinden doğrudan metin çıkarma ve gömülü çeviri",
+    "author": "MakineAI Team",
+    "license": "GPL-3.0",
+    "homepage": "https://github.com/MakineCeviri/MakineAI-Plugin-TextHook",
+    "entry": "makineai-texthook.dll",
+    "dependencies": [],
+    "capabilities": ["process", "hook"],
+    "features": [
+        "MinHook inline hooking",
+        "Engine handlers (Unity, Unreal, RPGMaker)",
+        "Embedded translation",
+        "Live plugin integration"
+    ],
+    "platforms": ["win64"],
+    "minLauncherVersion": "0.2.0"
+}
