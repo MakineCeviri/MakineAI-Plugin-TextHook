@@ -2,4 +2,4 @@ build/
 *.obj
 *.dll
 *.exe
-*.makine
+*.log

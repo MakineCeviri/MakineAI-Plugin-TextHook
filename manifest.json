@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "apiVersion": 1,
     "category": "hook",
-    "description": "Oyun belleğinden doğrudan metin çıkarma ve gömülü çeviri",
+    "description": "Game text extraction via process hooking",
     "author": "MakineAI Team",
     "license": "GPL-3.0",
     "homepage": "https://github.com/MakineCeviri/MakineAI-Plugin-TextHook",
@@ -12,11 +12,46 @@
     "dependencies": [],
     "capabilities": ["process", "hook"],
     "features": [
-        "MinHook inline hooking",
-        "Engine handlers (Unity, Unreal, RPGMaker)",
-        "Embedded translation",
-        "Live plugin integration"
+        "GDI text hooking (TextOut, DrawText, ExtTextOut)",
+        "GetGlyphOutline hooking",
+        "Process injection (CreateRemoteThread)",
+        "Named pipe IPC",
+        "Auto text deduplication"
     ],
     "platforms": ["win64"],
-    "minLauncherVersion": "0.2.0"
+    "minLauncherVersion": "0.2.0",
+    "settings": [
+        {
+            "key": "hookEnabled",
+            "type": "toggle",
+            "label": "Hook Aktif",
+            "default": "false"
+        },
+        {
+            "key": "targetProcess",
+            "type": "text",
+            "label": "Hedef İşlem",
+            "default": ""
+        },
+        {
+            "key": "hookFilter",
+            "type": "select",
+            "label": "Hook Filtresi",
+            "options": ["all", "textout", "drawtext", "glyph"],
+            "default": "all"
+        },
+        {
+            "key": "minTextLength",
+            "type": "select",
+            "label": "Min Metin Uzunluğu",
+            "options": ["1", "2", "3", "5", "10"],
+            "default": "2"
+        },
+        {
+            "key": "deduplication",
+            "type": "toggle",
+            "label": "Tekrar Filtresi",
+            "default": "true"
+        }
+    ]
 }
